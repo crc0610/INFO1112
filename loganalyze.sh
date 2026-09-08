@@ -17,3 +17,7 @@ else
     echo -e "usage: more than 1 arg is not allowed.\n"
     exit 2
 fi
+
+files=$(find "$dir" -mindepth 1 -maxdepth 1 -name "*log" -mtime -7 ! -name "analysisData.log" ! -name "summary.log")
+> ~/analysisData.log
+> ~/summary.log
